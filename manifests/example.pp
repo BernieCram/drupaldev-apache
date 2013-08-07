@@ -1,18 +1,28 @@
-$site = 'mikebell'
-apache::vhost { "${site}.drupal.dev":
-  server_name   => "${site}.drupal.dev",
+# Define your sites here
+$sites = [
+'mikebell',
+'d8'
+]
+
+# Magic
+define mySites {
+apache::vhost { "${name}.drupal.dev":
+  server_name   => "${name}.drupal.dev",
   serveraliases => [
   ],
-  docroot       => "/var/www/${site}.drupal.dev",
+  docroot       => "/var/www/${name}.drupal.dev",
   port          => '80',
   env_variables => [
   ],
   priority      => '1',
 }
 
-mysql::db { $site:
-  user     => $site,
-  password => $site,
+mysql::db { $name:
+  user     => $name,
+  password => $name,
   host     => 'localhost',
   grant    => ['all'],
 }
+}
+
+mySites { $sites: }
