@@ -117,4 +117,56 @@ php::pear::module { 'drush-6.0.0RC4':
   use_package => 'no',
 }
 
+class { 'ruby':
+  gems_version  => 'latest'
+}
+
+package { 'sass':
+  provider => 'gem',
+  ensure => installed,
+  require => Package[[rubygems]]
+}
+
+package { 'chunky_png':
+  provider => 'gem',
+  ensure => installed,
+  require => Package[[rubygems]]
+}
+
+package { 'fssm':
+  provider => 'gem',
+  ensure => installed,
+  require => Package[[rubygems]]
+}
+
+package { 'compass':
+  provider => 'gem',
+  ensure => installed,
+  require => Package[[rubygems]]
+}
+
+package { 'compass-normalize':
+  provider => 'gem',
+  ensure => installed,
+  require => Package[[rubygems]]
+}
+
+package { 'compass-rgbapng':
+  provider => 'gem',
+  ensure => installed,
+  require => Package[[rubygems]]
+}
+
+package { 'toolkit':
+  provider => 'gem',
+  ensure => installed,
+  require => Package[[rubygems]]
+}
+
+package { 'susy':
+  provider => 'gem',
+  ensure => installed,
+  require => Package[[rubygems]]
+}
+
 class { 'mailcatcher': }
