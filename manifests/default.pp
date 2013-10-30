@@ -37,17 +37,6 @@ apache::dotconf { 'custom':
 
 apache::module { 'rewrite': }
 
-apache::vhost { 'example.drupal.dev':
-  server_name   => 'example.drupal.dev',
-  serveraliases => [
-],
-  docroot       => '/var/www/example.drupal.dev',
-  port          => '80',
-  env_variables => [
-],
-  priority      => '1',
-}
-
 class { 'php':
   service             => 'apache',
   service_autorestart => false,
@@ -116,11 +105,4 @@ class { 'mysql::server':
 php::pear::module { 'drush':
   repository  => 'pear.drush.org',
   use_package => 'no',
-}
-
-mysql::db { 'example':
-  user     => 'example',
-  password => 'example',
-  host     => 'localhost',
-  grant    => ['all'],
 }
