@@ -113,6 +113,10 @@ php::pear::module { 'drush-6.0.0RC4':
   use_package => 'no',
 }
 
+php::pear::module { 'Console_Table':
+  use_package => 'no',
+}
+
 class { 'ruby':
   gems_version  => 'latest'
 }
