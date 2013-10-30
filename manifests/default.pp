@@ -23,8 +23,10 @@ package { [
     'vim',
     'curl',
     'git-core',
+    'wget',
     'zsh',
-    'wget'
+    'htop',
+    'memcached',
   ]:
   ensure  => 'installed',
 }
