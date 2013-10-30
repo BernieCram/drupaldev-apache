@@ -45,11 +45,18 @@ class { 'php':
   module_prefix       => '',
 }
 
-php::module { 'php5-mysql': }
-php::module { 'php5-cli': }
-php::module { 'php5-curl': }
-php::module { 'php5-intl': }
-php::module { 'php5-mcrypt': }
+php::module {
+  [
+    'php5-mysql',
+    'php5-cli',
+    'php5-curl',
+    'php5-intl',
+    'php5-mcrypt',
+    'php5-gd',
+    'php-apc',
+    'php5-memcached'
+  ]:
+}
 
 class { 'php::devel':
   require => Class['php'],
