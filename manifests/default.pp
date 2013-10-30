@@ -90,7 +90,8 @@ puphpet::ini { 'xdebug':
 
 puphpet::ini { 'php':
   value   => [
-    'date.timezone = "Europe/London"'
+    'date.timezone = "Europe/London"',
+    'sendmail_path = "/usr/bin/env /usr/local/bin/catchmail"'
   ],
   ini     => '/etc/php5/conf.d/zzz_php.ini',
   notify  => Service['apache'],
@@ -115,3 +116,5 @@ php::pear::module { 'drush-6.0.0RC4':
   repository  => 'pear.drush.org',
   use_package => 'no',
 }
+
+class { 'mailcatcher': }
