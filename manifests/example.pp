@@ -1,7 +1,6 @@
 # Define your sites here
 $sites = [
-    'mikebell',
-    'd8'
+    'example',
 ]
 
 # Magic
