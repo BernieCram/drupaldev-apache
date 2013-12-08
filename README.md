@@ -2,6 +2,10 @@
 
 Modified vagrant config from puphpet. Supports Drupal 6/7/8. Built in Drush and Composer.
 
+#DrupalDev Nginx
+
+Please consider using https://github.com/mikebell/drupaldev-nginx instead, this is barely maintained and various issues means that updating it has become impossible. If anyone wants to maintain this then please fork.
+
 #Tools
 1. Removed xhprof it doesn't work in this config
 2. Easier handling of vhosts and dbs (see example.pp)
