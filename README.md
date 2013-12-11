@@ -1,5 +1,7 @@
 #DrupalDev apache
 
+[![Build Status](http://r2.ayil.co.uk:8080/buildStatus/icon?job=drupaldev-apache-dev)](http://r2.ayil.co.uk:8080/job/drupaldev-apache-dev/)
+
 Modified vagrant config from puphpet. Supports Drupal 6/7/8. Built in Drush and Composer.
 
 #DrupalDev Nginx
